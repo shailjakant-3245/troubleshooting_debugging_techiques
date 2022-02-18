@@ -14,7 +14,7 @@ def copy(i,path):
 	subprocess.run(['cp','-rv',i,path])
 
 
-executor = futures.ThreadPoolExecutor()
+executor = futures.ThreadPoolExecutor()   #In place of Thread we can use 'Process'
 for i in list:
 	executor.submit(copy,i,path)  #executor will run all the task in parallel
 
