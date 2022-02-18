@@ -2,11 +2,18 @@
 
 import generate_list
 import sys
+import time
 
+begin = time.time()
 list = generate_list.alphabet()
-ind = sys.argv   #index no. to be searched
+end= time.time()
+print("TIme taken for list generation : {}".format(end-begin))
+
+
+ind = int(sys.argv[1])   #index no. to be searched
 key = list[ind]   #"zzz999" #  sys.argv
 print("Size of list is: "+str(len(list)))
+
 
 def binary_search(list, key):
     """Returns the position of key in the list if found, -1 otherwise.
@@ -25,9 +32,12 @@ def binary_search(list, key):
             left = middle + 1
     return -1
 
+begin= time.time()
+
 print(binary_search(list,key))
 
-
+end = time.time()
+print("TIme taken for execution of binary search : {}".format(end-begin))
 
 def linear_search(list, key):
     """If key is in the list returns its position in the list,
@@ -36,5 +46,9 @@ def linear_search(list, key):
         if item == key:
             return i
     return -1
+begin= time.time()
 
 print(linear_search(list,key))
+
+end = time.time()
+print("TIme taken for execution of linear search : {}".format(end-begin))
